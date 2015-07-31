@@ -3,29 +3,70 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1 style="text-align: center">Current month</h1>
 </div>
+<style type="text/css">
+    /* Styling for the title (Month and Year) of the calendar */
+    div.title {
+        font: x-large Verdana, Arial, Helvetica, sans-serif;
+        text-align: center;
+        height: 40px;
+        background-color: white;
+        color: black;
+    }
+    /* Styling for the footer */
+    div.footer {
+        font: small Verdana, Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+    /* Styling for the overall table */
+    table {
+        font: 100% Verdana, Arial, Helvetica, sans-serif;
+        table-layout: fixed;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    /* Styling for the column headers (days of the week) */
+    th {
+        padding: 0 0.5em;
+        text-align: center;
+        background-color: gray;
+        color: white;
+    }
+    /* Styling for the individual cells (days) */
+    td {
+        font-size: medium;
+        padding: 0.25em 0.25em;
+        width: 14%;
+        height: 80px;
+        text-align: left;
+        vertical-align: top;
+    }
+    /* Styling for the date numbers */
+    .date {
+        font-size: x-large;
+        padding: 0.25em 0.25em;
+        text-align: left;
+        vertical-align: top;
+    }
+    /* Class for individual days (coming in future release) */
+    .sun {
+        color: red;
+    }
+    /* Hide the month element (coming in future release) */
+    th.month {
+        visibility: hidden;
+        display: none;
+    }
+</style>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<div class="title">January 2015</div>
+<table border="1">
+    <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+    <tr><td><span class="date">&nbsp;</span></td><td><span class="date">&nbsp;</span></td><td><span class="date">&nbsp;</span></td><td><span class="date">1</span></td><td><span class="date">2</span></td><td><span class="date">3</span></td><td><span class="date">4</span></td></tr>
+    <tr><td><span class="date">5</span></td><td><span class="date">6</span></td><td><span class="date">7</span></td><td><span class="date">8</span></td><td><span class="date">9</span></td><td><span class="date">10</span></td><td><span class="date">11</span></td></tr>
+    <tr><td><span class="date">12</span></td><td><span class="date">13</span></td><td><span class="date">14</span></td><td><span class="date">15</span></td><td><span class="date">16</span></td><td><span class="date">17</span></td><td><span class="date">18</span></td></tr>
+    <tr><td><span class="date">19</span></td><td><span class="date">20</span></td><td><span class="date">21</span></td><td><span class="date">22</span></td><td><span class="date">23</span></td><td><span class="date">24</span></td><td><span class="date">25</span></td></tr>
+    <tr><td><span class="date">26</span></td><td><span class="date">27</span></td><td><span class="date">28</span></td><td><span class="date">29</span></td><td><span class="date">30</span></td><td><span class="date">31</span></td><td><span class="date">&nbsp;</span></td></tr>
+</table>
+<p>

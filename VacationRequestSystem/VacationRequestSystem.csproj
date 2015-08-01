@@ -160,6 +160,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\AdminArea\AdminAreaAreaRegistration.cs" />
+    <Compile Include="Areas\AdminArea\Controllers\AdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -185,6 +186,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\AdminArea\Views\web.config" />
+    <Content Include="Areas\AdminArea\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\AdminArea\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\AdminArea\Views\Admin\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -236,9 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\AdminArea\Controllers\" />
     <Folder Include="Areas\AdminArea\Models\" />
-    <Folder Include="Areas\AdminArea\Views\Shared\" />
     <Folder Include="Views\Calendar\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,41 @@
+﻿@model VacationRequestSystem.Models.CalendarModel
+@using System.Globalization
+
+@{ 
+    int curDay = 1;
+    int daysInMonth = DateTime.DaysInMonth(@Model.CurrentMonth.Year, @Model.CurrentMonth.Month);
+    DateTime modelDate = Model.CurrentMonth;
+}
+
+@Styles.Render("~/Content/Calendar.css")
+<div class="title">@Model.CurrentMonth.ToString("MMMM", CultureInfo.InvariantCulture) @Model.CurrentMonth.Year</div>
+<table border="1">
+    <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th class="holiday">Sat</th><th class="holiday">Sun</th></tr>
+    @while (curDay <= daysInMonth)
+    {
+        <tr>
+            @for (int i = 0; i < 7; i++)
+            {
+                int dayOfWeek = (int)(modelDate.DayOfWeek + 6) % 7;
+                <td>
+                    <span class="date">
+                        @if (i == dayOfWeek && curDay <= daysInMonth) {
+                            @modelDate.Day
+                            modelDate = modelDate.AddDays(1);
+                            curDay += 1;
+                        }
+                            else {
+                            @:&nbsp;
+                        }
+                    </span>
+                </td>                
+            }
+        </tr>        
+    }
+    @*<tr><td><span class="date">&nbsp;</span></td><td><span class="date">&nbsp;</span></td><td><span class="date">&nbsp;</span></td><td><span class="date">1</span></td><td><span class="date">2</span></td><td><span class="date">3</span></td><td><span class="date">4</span></td></tr>
+    <tr><td><span class="date">5</span></td><td><span class="date">6</span></td><td><span class="date">7</span></td><td><span class="date">8</span></td><td><span class="date">9</span></td><td><span class="date">10</span></td><td><span class="date">11</span></td></tr>
+    <tr><td><span class="date">12</span></td><td><span class="date">13</span></td><td><span class="date">14</span></td><td><span class="date">15</span></td><td><span class="date">16</span></td><td><span class="date">17</span></td><td><span class="date">18</span></td></tr>
+    <tr><td><span class="date">19</span></td><td><span class="date">20</span></td><td><span class="date">21</span></td><td><span class="date">22</span></td><td><span class="date">23</span></td><td><span class="date">24</span></td><td><span class="date">25</span></td></tr>
+    <tr><td><span class="date">26</span></td><td><span class="date">27</span></td><td><span class="date">28</span></td><td><span class="date">29</span></td><td><span class="date">30</span></td><td><span class="date">31</span></td><td><span class="date">&nbsp;</span></td></tr>*@
+</table>
+<p>

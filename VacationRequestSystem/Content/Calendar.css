@@ -50,3 +50,7 @@ th.month {
     visibility: hidden;
     display: none;
 }
+
+th.holiday {
+    background-color: green;
+}

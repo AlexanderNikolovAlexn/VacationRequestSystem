@@ -19,5 +19,13 @@ namespace VacationRequestSystem.Controllers
 
             return PartialView("_CalendarPartial", calendar);
         }
+
+        [HttpGet]
+        public ActionResult DisplayCalendarNext(int userId, DateTime currentMonth)
+        {            
+            CalendarModel calendar = new CalendarModel(currentMonth);
+
+            return PartialView("_CalendarPartial", calendar);
+        }
     }
 }

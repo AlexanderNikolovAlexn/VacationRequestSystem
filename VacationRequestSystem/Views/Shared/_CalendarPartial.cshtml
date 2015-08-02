@@ -11,19 +11,23 @@
 
 <div id="calendar">
     <div class="title">
-        @Ajax.ActionLink("Previous month",
-        "DisplayCalendarNext",
-        "Calendar",
-        new { userId = -1, currentMonth = Model.CurrentMonth.AddMonths(-1) },
-        new AjaxOptions { UpdateTargetId = "calendar" })
+         <span title="Previous month">
+            @Ajax.ActionLink("<<<",
+            "DisplayCalendarNext",
+            "Calendar",
+            new { userId = -1, currentMonth = Model.CurrentMonth.AddMonths(-1) },
+            new AjaxOptions { UpdateTargetId = "calendar" })
+        </span>
 
         @Model.CurrentMonth.ToString("MMMM", CultureInfo.InvariantCulture) @Model.CurrentMonth.Year
 
-        @Ajax.ActionLink("Next month",
-        "DisplayCalendarNext",
-        "Calendar",
-        new { userId = -1, currentMonth = Model.CurrentMonth.AddMonths(1) },
-        new AjaxOptions { UpdateTargetId = "calendar" })
+        <span title="Next month">
+            @Ajax.ActionLink(">>>",
+            "DisplayCalendarNext",
+            "Calendar",
+            new { userId = -1, currentMonth = Model.CurrentMonth.AddMonths(1) },
+            new AjaxOptions { UpdateTargetId = "calendar" })
+        </span>
     </div>
 
     <table border="1">

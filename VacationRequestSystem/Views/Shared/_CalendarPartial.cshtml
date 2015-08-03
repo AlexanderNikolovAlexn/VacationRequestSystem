@@ -11,7 +11,7 @@
 
 <div id="calendar">
     <div class="title">
-         <span title="Previous month">
+         <span class="previous" title="Previous month">
             @Ajax.ActionLink("<<<",
             "DisplayCalendarNext",
             "Calendar",
@@ -19,9 +19,11 @@
             new AjaxOptions { UpdateTargetId = "calendar" })
         </span>
 
-        @Model.CurrentMonth.ToString("MMMM", CultureInfo.InvariantCulture) @Model.CurrentMonth.Year
+        <span style="position:center; width:50px">
+            @Model.CurrentMonth.ToString("MMMM", CultureInfo.InvariantCulture) @Model.CurrentMonth.Year
+        </span>
 
-        <span title="Next month">
+        <span class="next" title="Next month">
             @Ajax.ActionLink(">>>",
             "DisplayCalendarNext",
             "Calendar",

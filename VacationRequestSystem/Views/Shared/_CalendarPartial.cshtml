@@ -8,10 +8,10 @@
 }
 
 @Styles.Render("~/Content/Calendar.css")
-<ul style="list-style-type:none">
+<ul class="vacationType">
     @foreach (var vacationType in Model.VacationType)
     {
-        <li>
+        <li class="vacationType">
             @Html.RadioButtonFor(model => vacationType, vacationType.VacationTypeId, (vacationType.IsSelected) ? new { @checked ="checked"} : null)
             <label>@vacationType.VacationTypeName</label>
         </li>

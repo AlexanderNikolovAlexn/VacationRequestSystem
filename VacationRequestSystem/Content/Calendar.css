@@ -67,3 +67,11 @@ span.next {
      top:0px; 
      right:350px;
 }
+
+ul.vacationType {
+    list-style-type:none;
+}
+
+li.vacationType {
+    display: inline-block;
+}

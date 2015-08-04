@@ -12,8 +12,7 @@ namespace VacationRequestSystem.Models
         public List<DateTime> Holidays { get; set; }
         public List<DateTime> WorkingWeekends { get; set; }
         public List<DateTime> PendingRequests { get; set; }
-        public List<DateTime> ApprovedRequests { get; set; }
-        public List<VacationType> VacationType { get; set; }        
+        public List<DateTime> ApprovedRequests { get; set; }   
 
         public CalendarModel(DateTime currentMonth, List<DateTime> holidays, List<DateTime> workingWeekends, List<DateTime> pendingRequests, List<DateTime> approvedRequests)
         {
@@ -31,20 +30,8 @@ namespace VacationRequestSystem.Models
             this.WorkingWeekends = null;
             this.PendingRequests = null;
             this.ApprovedRequests = null;
-            this.VacationType = InitVacationTypes();
         }
 
-        private List<VacationType> InitVacationTypes()
-        {
-            List<VacationType> listVacationType = new List<VacationType>();
-            listVacationType.Add(new VacationType(1, "Vacation", true));
-            listVacationType.Add(new VacationType(2, "Unpaid vacation", false));
-            listVacationType.Add(new VacationType(3, "Sick leave", false));
-            listVacationType.Add(new VacationType(4, "Personal", false));
-            listVacationType.Add(new VacationType(5, "Pregnancy", false));
-
-            return listVacationType;
-        }
     }
 
     public class VacationType
@@ -58,6 +45,18 @@ namespace VacationRequestSystem.Models
             this.VacationTypeId = VacationTypeId;
             this.VacationTypeName = VacationTypeName;
             this.IsSelected = IsSelected;
+        }
+
+        public static List<VacationType> InitVacationTypes()
+        {
+            List<VacationType> listVacationType = new List<VacationType>();
+            listVacationType.Add(new VacationType(1, "Vacation", true));
+            listVacationType.Add(new VacationType(2, "Unpaid vacation", false));
+            listVacationType.Add(new VacationType(3, "Sick leave", false));
+            listVacationType.Add(new VacationType(4, "Personal", false));
+            listVacationType.Add(new VacationType(5, "Pregnancy", false));
+
+            return listVacationType;
         }
     }
 }

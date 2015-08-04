@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<VacationRequestSystem.Models.VacationType>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -8,5 +10,16 @@
 <div class="jumbotron">
     TODO: Add user information hear!
 </div>
+
+@Styles.Render("~/Content/Calendar.css")
+<ul class="vacationType">
+    @foreach (var vacationType in Model)
+    {
+        <li class="vacationType">
+            @Html.RadioButtonFor(model => vacationType, vacationType.VacationTypeId, (vacationType.IsSelected) ? new { @checked = "checked" } : null)
+            <label>@vacationType.VacationTypeName</label>
+        </li>
+    }
+</ul>
 
 @Html.Action("DisplayCalendar", "Calendar", new { userId = -1 });

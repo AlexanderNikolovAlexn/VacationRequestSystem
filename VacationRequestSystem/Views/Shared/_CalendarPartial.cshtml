@@ -7,16 +7,6 @@
     DateTime modelDate = Model.CurrentMonth;
 }
 
-@Styles.Render("~/Content/Calendar.css")
-<ul class="vacationType">
-    @foreach (var vacationType in Model.VacationType)
-    {
-        <li class="vacationType">
-            @Html.RadioButtonFor(model => vacationType, vacationType.VacationTypeId, (vacationType.IsSelected) ? new { @checked ="checked"} : null)
-            <label>@vacationType.VacationTypeName</label>
-        </li>
-    }
-</ul>
 <div id="calendar">
     <div class="title">
          <span class="previous" title="Previous month">

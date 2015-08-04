@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VacationRequestSystem.Models;
 
 namespace VacationRequestSystem.Controllers
 {
@@ -10,7 +11,8 @@ namespace VacationRequestSystem.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var listVacationTypes = VacationType.InitVacationTypes();
+            return View("Index", listVacationTypes);
         }
 
         public ActionResult About()

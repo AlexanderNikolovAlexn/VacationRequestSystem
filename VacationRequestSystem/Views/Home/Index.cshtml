@@ -16,8 +16,10 @@
     @foreach (var vacationType in Model)
     {
         <li class="vacationType">
-            @Html.RadioButtonFor(model => vacationType, vacationType.VacationTypeId, (vacationType.IsSelected) ? new { @checked = "checked" } : null)
-            <label>@vacationType.VacationTypeName</label>
+            <label>
+                @Html.RadioButtonFor(model => vacationType, vacationType.VacationTypeId, (vacationType.IsSelected) ? new { @checked = "checked" } : null)
+                @vacationType.VacationTypeName
+            </label>
         </li>
     }
 </ul>
